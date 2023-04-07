@@ -41,34 +41,34 @@ export default function Header() {
                 <div className="ml-10 flex items-baseline space-x-4">
                   <Link
                     href="/session"
-                    className="my-auto rounded-md px-3 py-2 font-medium text-white hover:bg-gray-700 hover:text-white"
+                    className="my-auto  px-3 py-2 font-medium text-white hover:bg-gray-700 hover:text-white"
                   >
                     Create
                   </Link>
 
                   <Link
                     href="#"
-                    className="my-auto rounded-md px-3 py-2 font-medium text-white hover:bg-gray-700 hover:text-white"
+                    className="my-auto  px-3 py-2 font-medium text-white hover:bg-gray-700 hover:text-white"
                   >
                     Dashboard
                   </Link>
 
                   <a
                     href="#"
-                    className="my-auto rounded-md px-3 py-2 font-medium text-white hover:bg-gray-700 hover:text-white"
+                    className="my-auto  px-3 py-2 font-medium text-white hover:bg-gray-700 hover:text-white"
                   >
                     Projects
                   </a>
                   {/* <a
                     href="#"
-                    className="hover:bg-gray-700 text-white hover:text-white px-3 py-2 rounded-md font-medium font-medium"
+                    className="hover:bg-gray-700 text-white hover:text-white px-3 py-2  font-medium font-medium"
                   >
                     Calendar
                   </a>
 
                   <a
                     href="#"
-                    className="hover:bg-gray-700 text-white hover:text-white px-3 py-2 rounded-md font-medium font-medium"
+                    className="hover:bg-gray-700 text-white hover:text-white px-3 py-2  font-medium font-medium"
                   >
                     Reports
                   </a> */}
@@ -79,7 +79,7 @@ export default function Header() {
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 type="button"
-                className="inline-flex items-center justify-center rounded-md bg-gray-900 p-2 text-gray-400 hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                className="inline-flex items-center justify-center bg-white p-2 text-black  transition duration-300 hover:scale-110  "
                 aria-controls="mobile-menu"
                 aria-expanded="false"
               >
@@ -136,35 +136,35 @@ export default function Header() {
               <div ref={node} className="space-y-1 px-2 pt-2 pb-3 sm:px-3">
                 <a
                   href="#"
-                  className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-gray-700 hover:text-white"
+                  className="block  px-3 py-2 text-base font-medium text-white hover:bg-gray-700 hover:text-white"
                 >
                   stroke-miterlimit Dashboard
                 </a>
 
                 <a
                   href="#"
-                  className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                  className="block  px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                 >
                   Team
                 </a>
 
                 <a
                   href="#"
-                  className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                  className="block  px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                 >
                   Projects
                 </a>
 
                 <a
                   href="#"
-                  className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                  className="block  px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                 >
                   Calendar
                 </a>
 
                 <a
                   href="#"
-                  className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                  className="block  px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                 >
                   Reports
                 </a>

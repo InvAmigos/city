@@ -1,11 +1,10 @@
-import React from 'react'
-import Pick from '../../../components/create/Pick'
-import Request from '../../../components/create/SmsSession'
+import React from "react"
+import Pick from "$/create/Pick"
 
 export default function create() {
   return (
     <>
-    <Pick />
+      <Pick />
     </>
   )
 }
