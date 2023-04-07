@@ -9,10 +9,34 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "eslint": "8.35.0",
+    "@headlessui/react": "^1.7.13",
+    "@ianvs/prettier-plugin-sort-imports": "^3.7.2",
+    "@tailwindcss/forms": "^0.5.3",
     "eslint-config-next": "13.2.3",
+    "flowbite": "^1.6.4",
+    "immer": "^9.0.21",
+    "lodash": "^4.17.21",
     "next": "13.2.3",
+    "papaparse": "^5.4.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "zustand": "^4.3.7"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-node": "^4.1.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "postcss": "^8.4.21",
+    "prettier": "^2.8.7",
+    "prettier-plugin-tailwindcss": "^0.2.6",
+    "tailwindcss": "^3.2.7"
   }
 }
