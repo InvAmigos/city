@@ -1,5 +1,5 @@
 import Image from "next/image"
-import Link from "next/link"
+import ButtonPartyForm from "$/create/ButtonPartyForm"
 
 export default function Hero() {
   return (
@@ -13,13 +13,7 @@ export default function Hero() {
           <p className="mb-8 text-2xl leading-normal">
             Most efficient party organizer ever made 100% free*
           </p>
-          <Link
-            className="focus:shadow-outline mx-auto my-6 transform bg-black  py-4 px-8 font-bold text-white shadow-2xl  transition duration-300 ease-in-out hover:scale-105 focus:outline-none lg:mx-0"
-            href="/session"
-          >
-            {" "}
-            TRY
-          </Link>
+          <ButtonPartyForm />
         </div>
         <div className="w-full py-6 text-center md:w-3/5">
           <Image
