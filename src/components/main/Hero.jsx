@@ -4,7 +4,7 @@ import ButtonPartyForm from "$/create/ButtonPartyForm"
 export default function Hero() {
   return (
     <div className="pt-24">
-      <div className="container mx-auto flex flex-col flex-wrap items-center px-3 md:flex-row">
+      <div className="container mx-auto flex max-w-7xl flex-col flex-wrap  items-center  px-4 sm:px-6 md:flex-row lg:px-8">
         <div className="flex w-full flex-col items-start justify-center text-center md:w-2/5 md:text-left">
           <p className="tracking-loose w-full uppercase">hello people</p>
           <h1 className="my-4 text-5xl font-bold leading-tight">

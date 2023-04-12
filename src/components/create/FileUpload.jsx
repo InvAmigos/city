@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useEffect, useState } from "react"
-import useGlobalState from "@/states/smsListPreview"
+import useGlobalState from "@/states/invitationsTable"
 import Papa from "papaparse"
 
 export default function FileUploader() {

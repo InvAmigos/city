@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useEffect } from "react"
-import useGlobalState from "@/states/smsListPreview"
+import useGlobalState from "@/states/invitationsTable"
 
 const Row = ({ name = "", message = "", phone = "" }) => {
   return (
@@ -23,7 +23,7 @@ const Row = ({ name = "", message = "", phone = "" }) => {
   )
 }
 
-export default function Preview() {
+export default function MembersInvitationsTable() {
   const [smsData] = useGlobalState((state) => [state.smsData])
 
   useEffect(() => {
