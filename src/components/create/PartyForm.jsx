@@ -2,44 +2,26 @@
 
 import { useState } from "react"
 import Image from "next/image"
+import { useForm } from "react-hook-form"
 
 const PartyForm = ({ onClick }) => {
-  const [partyName, setPartyName] = useState("")
-  const [partyAddress, setPartyAddress] = useState("")
-  const [partyType, setPartyType] = useState("")
-  const [address, setAddress] = useState("")
   const [useCurrentLocation, setUseCurrentLocation] = useState(false)
 
-  const handleSubmit = async (event) => {
-    event.preventDefault()
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm()
 
-    const partyData = {
-      partyName,
-      partyAddress,
-      partyType,
-    }
-
-    const response = await fetch("/api/party", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(partyData),
-    })
-
-    if (response.ok) {
-      console.log("Party created successfully!")
-      setPartyName("")
-      setPartyAddress("")
-      setPartyType("")
-    } else {
-      console.error("Failed to create party.")
-    }
+  const onSubmit = (data) => {
+    console.log("Here we validate")
+    console.log(data)
   }
 
   return (
-    <>
-      <div className="flex h-auto w-96 bg-gray-100 md:min-w-max">
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <div className="flex h-auto w-80 bg-gray-100 md:min-w-max">
         <div
           className="m-auto"
           style={{
@@ -64,9 +46,15 @@ const PartyForm = ({ onClick }) => {
               </div>
               <div className="px-5 pb-5">
                 <input
+                  {...register("name", { required: true, maxLength: 20 })}
                   placeholder="Name"
-                  className="focus:shadow-outline  mt-2 w-full transform border-transparent bg-gray-300  px-4   py-2.5 font-mono text-base text-black placeholder-gray-600 ring-gray-400 ring-offset-2  ring-offset-current transition duration-500 ease-in-out focus:border-black focus:bg-white focus:outline-none focus:ring-2 dark:focus:bg-gray-800"
+                  className="focus:shadow-outline  mt-2 w-full transform border-transparent bg-gray-300  px-4   py-2.5 font-mono text-base text-black placeholder-gray-600 ring-black ring-offset-1  transition duration-500 ease-in-out  focus:bg-white focus:outline-none focus:ring-2 "
                 />
+                {errors.name?.type === "required" && (
+                  <span className="m-1 block italic text-red-600 sm:inline">
+                    Party name is required
+                  </span>
+                )}
                 <div className="m-1">
                   <label className="bg-white ">
                     <input
@@ -74,7 +62,7 @@ const PartyForm = ({ onClick }) => {
                       onChange={() => {
                         setUseCurrentLocation(!useCurrentLocation)
                       }}
-                      className="mr-2 h-4 w-4  appearance-none border-none bg-gray-300 p-1 text-black  shadow-lg checked:bg-black indeterminate:bg-gray-300 focus:ring-transparent "
+                      className="mr-2 h-4 w-4  appearance-none border-none bg-gray-300 p-1 text-black  shadow-lg checked:bg-black  focus:ring-transparent "
                     />
                     Use current location
                   </label>
@@ -84,15 +72,13 @@ const PartyForm = ({ onClick }) => {
                   <input
                     disabled
                     placeholder="Address"
-                    className="focus:shadow-outline mt-2 w-full transform border-transparent bg-gray-300 px-4 py-2.5 font-mono text-base text-black placeholder-gray-600 ring-gray-400 ring-offset-2 ring-offset-current transition duration-500 ease-in-out focus:border-black focus:bg-white focus:outline-none focus:ring-2 disabled:opacity-75 dark:focus:bg-gray-800"
+                    className="focus:shadow-outline mt-2 w-full transform border-transparent bg-gray-300 px-4 py-2.5 font-mono text-base text-black placeholder-gray-600 ring-gray-400 ring-offset-2 ring-offset-current transition duration-500 ease-in-out focus:border-black focus:bg-white focus:outline-none focus:ring-2 disabled:opacity-25 dark:focus:bg-gray-800"
                   />
                 ) : (
                   <input
-                    onChange={(e) => {
-                      setAddress(e.target.value)
-                    }}
+                    {...register("address")}
                     placeholder="Address"
-                    className="focus:shadow-outline mt-2 w-full transform border-transparent bg-gray-300 px-4 py-2.5 font-mono text-base text-black placeholder-gray-600 ring-gray-400 ring-offset-2 ring-offset-current transition duration-500 ease-in-out focus:border-black focus:bg-white focus:outline-none focus:ring-2 dark:focus:bg-gray-800"
+                    className="focus:shadow-outline  mt-2 w-full transform border-transparent bg-gray-300  px-4   py-2.5 font-mono text-base text-black placeholder-gray-600 ring-black ring-offset-1  transition duration-500 ease-in-out  focus:bg-white focus:outline-none focus:ring-2 "
                   />
                 )}
               </div>
@@ -124,7 +110,7 @@ const PartyForm = ({ onClick }) => {
               <div className="flex flex-row-reverse p-3">
                 <div className="flex-initial pl-3">
                   <button
-                    type="button"
+                    type="submit"
                     className="flex transform items-center  bg-black px-5 py-2.5 font-medium   capitalize tracking-wide text-white  transition duration-300  ease-in-out hover:bg-gray-800 focus:bg-gray-900 focus:outline-none active:scale-95"
                   >
                     <svg
@@ -168,7 +154,7 @@ const PartyForm = ({ onClick }) => {
           </div>
         </div>
       </div>
-    </>
+    </form>
   )
 }
 

@@ -21,6 +21,19 @@ export default function ButtonPartyForm() {
   const handlePartyClick = (e) => {
     setShowDialog(!showDialog)
   }
+
+  const tryButton = (addattr) => {
+    return (
+      <button
+        className={`${addattr} mx-auto my-6 transform bg-black py-4 px-8 font-bold text-white shadow-2xl transition duration-300 ease-in-out hover:scale-105 focus:outline-none lg:mx-0`}
+        onClick={handleButtonClick}
+      >
+        {" "}
+        TRY
+      </button>
+    )
+  }
+
   return (
     <>
       {showDialog && userSignedIn && (
@@ -29,15 +42,10 @@ export default function ButtonPartyForm() {
           <div className="fixed top-1/2 left-1/2 z-50 h-auto -translate-x-1/2 -translate-y-1/2 transform">
             <PartyForm onClick={handlePartyClick} />
           </div>
+          {screen.width > 400 && tryButton()}
         </div>
       )}
-      <button
-        className="focus:shadow-outline mx-auto my-6 transform bg-black  py-4 px-8 font-bold text-white shadow-2xl  transition duration-300 ease-in-out hover:scale-105 focus:outline-none lg:mx-0"
-        onClick={handleButtonClick}
-      >
-        {" "}
-        TRY
-      </button>
+      {!showDialog && tryButton()}
     </>
   )
 }
