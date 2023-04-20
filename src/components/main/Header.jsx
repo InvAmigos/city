@@ -40,17 +40,17 @@ export default function Header() {
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-4">
                   <Link
-                    href="/session"
+                    href="/events"
                     className="my-auto  px-3 py-2 font-medium text-white hover:bg-gray-700 hover:text-white"
                   >
-                    Create
+                    Events
                   </Link>
 
                   <Link
                     href="#"
                     className="my-auto  px-3 py-2 font-medium text-white hover:bg-gray-700 hover:text-white"
                   >
-                    Dashboard
+                    Create
                   </Link>
 
                   <a
@@ -138,7 +138,7 @@ export default function Header() {
                   href="#"
                   className="block  px-3 py-2 text-base font-medium text-white hover:bg-gray-700 hover:text-white"
                 >
-                  stroke-miterlimit Dashboard
+                  stroke-miterlimit Create
                 </a>
 
                 <a

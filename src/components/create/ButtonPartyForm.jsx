@@ -7,7 +7,7 @@ import PartyForm from "./PartyForm"
 
 export default function ButtonPartyForm() {
   const [showDialog, setShowDialog] = useState(false)
-  //TODO use global state or something better
+  // TODO: use global state or something better
   const [userSignedIn, setUserSignedIn] = useState(true)
   const router = useRouter()
 

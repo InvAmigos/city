@@ -11,7 +11,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Header />
-        {children}
+        <div className="relative top-20">{children}</div>
       </body>
     </html>
   )
