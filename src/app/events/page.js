@@ -1,6 +1,7 @@
 import React from "react"
 
 import EventCard from "@/components/EventCard"
+import Filter from "@/components/Filter"
 
 const EVENTS = [
   {
@@ -17,7 +18,8 @@ const EVENTS = [
     type: "event",
     ownerId: "1245",
     date: new Date().toISOString(),
-    message: "Amit wedding party sandjo sdaun uibna iub ihyhab iya biy baiuyb iyl byi",
+    message:
+      "Amit wedding party sandjo sdaun uibna iub ihyhab iya biy baiuyb iyl byi",
   },
   {
     id: "12345679",
@@ -32,10 +34,8 @@ const EVENTS = [
 export default function Events() {
   return (
     <>
-      {/* <h1 className="text-2xl">Here we put all our events</h1>
-      <h3 className="text-xl">My events card list</h3>
-      <h3 className="text-xl">Friends events card list</h3> */}
-      <div className="flex justify-center mt-10">
+      <Filter />
+      <div className="mt-10 flex justify-center">
         <div className="grid grid-cols-1  gap-6 md:grid-cols-1">
           {EVENTS.map(({ id, location, message, ownerId, date, type }) => (
             <EventCard

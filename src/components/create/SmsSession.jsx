@@ -1,5 +1,5 @@
 import React from "react"
-import Preview from "$/tables/Preview"
+import Preview from "@/components/tables/membersInvitations"
 
 import FileUploader from "./FileUpload"
 

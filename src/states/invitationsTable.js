@@ -1,7 +1,6 @@
-import { Immer } from "immer"
 import { create } from "zustand"
 
-const useGlobalState = create((set) => ({
+const useInvitationTable = create((set) => ({
   smsData: [
     // { name: "yair", message: "Hello, how are you?", phone: "John" },
     // { name: "d", message: "I will be late today", phone: "Alice" },
@@ -13,4 +12,4 @@ const useGlobalState = create((set) => ({
     })),
 }))
 
-export default useGlobalState
+export default useInvitationTable
