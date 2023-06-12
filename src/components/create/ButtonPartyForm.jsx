@@ -3,7 +3,7 @@
 import React, { useState } from "react"
 import { useRouter } from "next/navigation"
 
-import PartyForm from "./PartyForm"
+import EventForm from "./EventForm"
 
 export default function ButtonPartyForm() {
   const [showDialog, setShowDialog] = useState(false)
@@ -40,7 +40,7 @@ export default function ButtonPartyForm() {
         <div>
           <div className="fixed top-0 left-0 z-50 h-full w-full bg-gray-500 opacity-50"></div>
           <div className="fixed top-1/2 left-1/2 z-50 h-auto -translate-x-1/2 -translate-y-1/2 transform">
-            <PartyForm onClick={handlePartyClick} />
+            <EventForm onClick={handlePartyClick} />
           </div>
           {screen.width > 400 && tryButton()}
         </div>

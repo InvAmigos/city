@@ -11,6 +11,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.13",
     "@ianvs/prettier-plugin-sort-imports": "^3.7.2",
+    "@react-pdf/renderer": "^3.1.12",
     "@tailwindcss/forms": "^0.5.3",
     "eslint-config-next": "13.2.3",
     "flowbite": "^1.6.5",
@@ -25,6 +26,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
+    "daisyui": "^3.1.0",
     "eslint": "^8.2.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-node": "^4.1.0",

@@ -20,11 +20,22 @@ export default function Header() {
         setScrolledUp(false)
       }
       prevScrollY.current = currentScrollY
+      setIsOpen(false)
     }
 
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  }, [isOpen])
+
+  // useEffect(() => {
+  //   document.body.addEventListener(
+  //     "click",
+  //     () => {
+  //       setIsOpen(false)
+  //     },
+  //     true
+  //   )
+  // }, [])
 
   const headerClass = `top-0 z-10 mx-auto w-full bg-black shadow-2xl fixed transform ${
     scrolledUp ? "" : "-translate-y-full"
@@ -32,6 +43,7 @@ export default function Header() {
 
   return (
     <div>
+      // Large screen
       <nav className={headerClass}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
@@ -47,31 +59,18 @@ export default function Header() {
                   </Link>
 
                   <Link
-                    href="#"
+                    href="/create"
                     className="my-auto  px-3 py-2 font-medium text-white hover:bg-gray-700 hover:text-white"
                   >
                     Create
                   </Link>
 
-                  <a
+                  <Link
                     href="#"
                     className="my-auto  px-3 py-2 font-medium text-white hover:bg-gray-700 hover:text-white"
                   >
                     Projects
-                  </a>
-                  {/* <a
-                    href="#"
-                    className="hover:bg-gray-700 text-white hover:text-white px-3 py-2  font-medium font-medium"
-                  >
-                    Calendar
-                  </a>
-
-                  <a
-                    href="#"
-                    className="hover:bg-gray-700 text-white hover:text-white px-3 py-2  font-medium font-medium"
-                  >
-                    Reports
-                  </a> */}
+                  </Link>
                 </div>
               </div>
             </div>
@@ -122,56 +121,44 @@ export default function Header() {
           </div>
         </div>
 
-        <Transition
-          show={isOpen}
-          enter="transition ease-out duration-100 transform"
-          enterFrom="opacity-0 scale-95"
-          enterTo="opacity-100 scale-100"
-          leave="transition ease-in duration-75 transform"
-          leaveFrom="opacity-100 scale-100"
-          leaveTo="opacity-0 scale-95"
-        >
-          {(node) => (
-            <div className="md:hidden" id="mobile-menu">
-              <div ref={node} className="space-y-1 px-2 pt-2 pb-3 sm:px-3">
-                <a
-                  href="#"
-                  className="block  px-3 py-2 text-base font-medium text-white hover:bg-gray-700 hover:text-white"
-                >
-                  stroke-miterlimit Create
-                </a>
+        {isOpen && (
+          <Transition
+            show={isOpen}
+            enter="transition ease-out duration-100 transform"
+            enterFrom="opacity-0 scale-95"
+            enterTo="opacity-100 scale-100"
+            leave="transition ease-in duration-75 transform"
+            leaveFrom="opacity-100 scale-100"
+            leaveTo="opacity-0 scale-95"
+          >
+            {(node) => (
+              <div className="md:hidden" id="mobile-menu">
+                <div ref={node} className="space-y-1 px-2 pt-2 pb-3 sm:px-3">
+                  <Link
+                    href="/events"
+                    className="block  px-3 py-2 text-base font-medium text-white hover:bg-gray-700 hover:text-white"
+                  >
+                    Events
+                  </Link>
 
-                <a
-                  href="#"
-                  className="block  px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                >
-                  Team
-                </a>
+                  <Link
+                    href="/create"
+                    className="block  px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                  >
+                    Create
+                  </Link>
 
-                <a
-                  href="#"
-                  className="block  px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                >
-                  Projects
-                </a>
-
-                <a
-                  href="#"
-                  className="block  px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                >
-                  Calendar
-                </a>
-
-                <a
-                  href="#"
-                  className="block  px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                >
-                  Reports
-                </a>
+                  <Link
+                    href="#"
+                    className="block  px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                  >
+                    Projects
+                  </Link>
+                </div>
               </div>
-            </div>
-          )}
-        </Transition>
+            )}
+          </Transition>
+        )}
       </nav>
     </div>
   )
