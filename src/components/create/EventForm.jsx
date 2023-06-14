@@ -3,8 +3,9 @@
 import { useState } from "react"
 import Image from "next/image"
 import { useForm } from "react-hook-form"
+import Form from "./multiStep/Form"
 
-const PartyForm = ({ onClick }) => {
+const EventForm = ({ onClick }) => {
   const [useCurrentLocation, setUseCurrentLocation] = useState(false)
 
   const {
@@ -20,7 +21,9 @@ const PartyForm = ({ onClick }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <>
+    <Form />
+    {/* <form onSubmit={handleSubmit(onSubmit)}>
       <div className="flex h-auto w-80 bg-gray-100 md:min-w-max">
         <div
           className="m-auto"
@@ -154,8 +157,9 @@ const PartyForm = ({ onClick }) => {
           </div>
         </div>
       </div>
-    </form>
+    </form> */}
+    </>
   )
 }
 
-export default PartyForm
+export default EventForm
